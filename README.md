@@ -42,14 +42,14 @@ At the end of each level there is a safe room where the player must rest and pre
 
 ## Items
 
-	- Grains: Tortilla, bread, rice, etc.
-	- Proteins: Beef, pork, chicken, venison, etc.
-	- Other: Beans, peppers, fruit, etc.
-	- Drink: Whiskey, beer, moonshine, water, etc.
-	- Other consumables: Tobacco, Coffee
-	- Ammo: Bullets, power, percussion caps
-	- Melee Weapons: Knives, Axes, hatchets, tomahawks, Hammers, bottles, planks, pipes
-	- Upgrades: Sheath, holster, pouches
+- Grains: Tortilla, bread, rice, etc.
+- Proteins: Beef, pork, chicken, venison, etc.
+- Other: Beans, peppers, fruit, etc.
+- Drink: Whiskey, beer, moonshine, water, etc.
+- Other consumables: Tobacco, Coffee
+- Ammo: Bullets, power, percussion caps
+- Melee Weapons: Knives, Axes, hatchets, tomahawks, Hammers, bottles, planks, pipes
+- Upgrades: Sheath, holster, pouches
 
 ## Replayability
 
