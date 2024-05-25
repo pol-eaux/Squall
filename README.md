@@ -9,6 +9,7 @@
 	The overall objective of Squall is to reach the final destination and defeat the final boss. It is a linear experience where the player navigates from level to level, gradually making their way towards the final encounter and hence the climax of the story. Over time the player will encounter basic combat progression with encounters getting more and more difficult, along with items that improve the abilities of the player. Squall takes gameplay queues from the survival horror and immersive sim genres, providing a mix of combat and puzzles.
  
 # Mechanics
+
 ## Player Movement
 
 	The player moves in a basic fashion, albeit without verticality. The player will be able to move in all four directions at a standard movement speed, with the ability to sprint with a small speed gain. The player may also crouch to get through small spaces, moving slower. There is no jumping in this project.
@@ -24,20 +25,20 @@
 ## Inventory
 
 	The player has a diegetic inventory, meaning it makes sense in the world. Everything the player will need is on the player model, which can be accessed by looking down at the player’s torso. Some items cannot be accessed unless in safe rooms, in which case those items are added to a non-visual inventory. The inventory will be able to be upgraded by finding upgrades in level.
-Knife Sheath: This allows you to store one bladed melee weapon on your person.
-Dynamite Pouch: This allows you to store 2-3 dynamite sticks on your person.
-Off-hand holster: This allows you to store a second pistol on your person. (Unsure if this will be included, not entirely sure how I want the bullet economy to work yet.)
+- Knife Sheath: This allows you to store one bladed melee weapon on your person.
+- Dynamite Pouch: This allows you to store 2-3 dynamite sticks on your person.
+- Off-hand holster: This allows you to store a second pistol on your person. (Unsure if this will be included, not entirely sure how I want the bullet economy to work yet.)
 
 ## Combat
 
 	There are four “pillars” of combat in this project. Unarmed, melee, shooting, and throwing combat. This combat is inspired by Chivalry Medieval Warfare as well as Condemned: Criminal Origins. Most weapons have 5 different attacks: block, swing left, swing right, overhead, and stab. Each weapon is better at a different type of attack. Knives are better for stabbing, axes are better for slashing, and clubs are better at overheads. Melee weapons can be thrown, and there is a kick move that can be used while holding any weapon. Blocking with a melee weapon causes no damage to be done to the player, blocking while unarmed does a small amount of damage.
-Melee weapons can break very easily, this encourages the player to scrounge for weapons on the map and during combat. Some melee weapons have combos, for example, a glass bottle can be slashed with or “overheaded” with to break it, and then stabbed with to do more damage.
-The pistol is a very powerful weapon, but the ammunition for it is very scarce. The pistol can also not be reloaded unless you are in a safe room, due to the wet nature of the environment and the fact that it is a muzzleloader. It has three mechanics: aim, cock, shoot. The pistol must be cocked before it can shoot.
+- Melee weapons can break very easily, this encourages the player to scrounge for weapons on the map and during combat. Some melee weapons have combos, for example, a glass bottle can be slashed with or “overheaded” with to break it, and then stabbed with to do more damage.
+- The pistol is a very powerful weapon, but the ammunition for it is very scarce. The pistol can also not be reloaded unless you are in a safe room, due to the wet nature of the environment and the fact that it is a muzzleloader. It has three mechanics: aim, cock, shoot. The pistol must be cocked before it can shoot.
 
 ## Safe Room
 
 	At the end of each level there is a safe room where the player must rest and prepare for the next day/level. Throughout the level the player can find food to pick up, this food can increase the player’s stats for the next day. The player must eat dinner, reload the pistol (if possible) and then sleep. The game saves during sleep. The next morning the player can choose to make coffee for a further stat boost before continuing to the next level.
-Eating a full meal will increase health for the next day, this means eating a grain, protein, and other as well as a drink. Drinking coffee in the morning will increase the max stamina for the next day.
+- Eating a full meal will increase health for the next day, this means eating a grain, protein, and other as well as a drink. Drinking coffee in the morning will increase the max stamina for the next day.
 
 ## Items
 
