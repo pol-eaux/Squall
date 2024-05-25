@@ -1,151 +1,88 @@
 Squall: Sudden Violence
+--------------------------------------------------------------------------------------------------------------
+Overview
+	Squall is a game intended purely for entertainment, it is a standalone program entirely contained within itself. There is no higher purpose, It is a first-person action shooter game intended for young adults.
 
-Very rough outline of intended features / ideas
+Gameplay
+	The overall objective of Squall is to reach the final destination and defeat the final boss. It is a linear experience where the player navigates from level to level, gradually making their way towards the final encounter and hence the climax of the story. Over time the player will encounter basic combat progression with encounters getting more and more difficult, along with items that improve the abilities of the player. Squall takes gameplay queues from the survival horror and immersive sim genres, providing a mix of combat and puzzles.
+--------------------------------------------------------------------------------------------------------------
+Mechanics
+Player Movement
+The player moves in a basic fashion, albeit without verticality. The player will be able to move in all four directions at a standard movement speed, with the ability to sprint with a small speed gain. The player may also crouch to get through small spaces, moving slower. There is no jumping in this project.
 
-Story fragments to be improved later
-Retelling of the Noachian flood story from Genesis.
-https://en.wikipedia.org/wiki/Genesis_flood_narrative
-Endless rain creates a muddy, flooded environment.
-Everyone seems possessed or super violent crazy like in Condemned.
-They are turning crazy from the influence of the Devil’s Tower.
-The player will make his way towards the Devil’s Tower (Wyoming), the picture in mind is a huge red eclipsed sun just above the tower
-The player will kill a representation of the devil that was making everyone crazy in a mine dug into the base of the tower.
-God is flooding the earth because of evil, killing the source of evil stops the rain.
+Player Actions
+	The player can interact with interactables, such as doors and chests and such to open them.
 
-Enemies
-Small fast moving enemy, quick but deals low damage.
-Regular enemy
-Heavy enemy, slow but deals high damage
-Dynamiter, low physical damage but throws dynamite at the player.
-All melee enemies can spawn with a random melee weapon, or grab items from the environment like in Condemned.
-Enemies can spawn with random clothing pieces to show variety.
-I’m not sure if I want enemies to have guns, with how I want to balance guns I think it would be too hard for the player to kill an enemy with a gun? This could change idk
-Bosses
-The Devil
-Try to find a good representation, a goat kinda seems overdone.
-Flood the mine to kill him
-Ned Kelly type armorer enemy
-Make him walk into traps to kill him
-…
+Health & Stamina
+The player has both health and stamina, both are rather self explanatory. Stamina is expended upon doing unarmed and melee attacks as well when sprinting. Stamina can also be expended just by moving and fighting in mud and deeper water. Stamina will regenerate over time. Health can be regenerated upon using tobacco. Health and Stamina can be improved, this will be detailed in a future section (Safe Room and Saving).
 
-Items
-Food
-Grains: Tortilla, bread, etc.
-Proteins: beef, pork, chicken, etc.
-Other: beans, rice, peppers, etc.
-Drink
-Alcohol: beer, whiskey, cider, etc.
-Coffee
-Tobacco
-Bullets
-Black Powder
-Percussion Caps
-Melee Weapons
-Knives
-Axes
-Hammers
-Bottles
-Stones
-Planks
-Pipes
-Upgrades
-Sheath
-Dynamite pouch
-Knuckle dusters: permanently increases unarmed damage.
-
-Player Mechanics
-Health and stamina
-The max health cap can be increased for the day by eating a wholesome meal before bed. Eating grains, proteins, a side, and a drink constitutes a whole meal.
-The max stamina cap can be increased for the day by drinking a cup of coffee in the morning.
-Tobacco can be used to slowly restore health during the day.
-Stamina naturally regenerates over time.
-Stamina is expended with melee and unarmed attacks
-Stamina is also expended when running or fighting in mud and water.
-Safe Room and Saving
-The safe room is at the end of each level, where the player can reload his pistol, eat dinner, and sleep to continue to the next day and level.
-Saving is only done during sleep.
-At the beginning of the next day the player can make coffee in the safe room.
 Inventory
-The player has an inventory in the form of his torso, looking down the player can see the playermodel torso.
-His gun can be drawn by placing the crosshair on the holster, and holstered by doing the same.
-Picking up food, drink, coffee, and tobacco will not have a visible inventory, you can pick up a limit for each.
-Picking up ammo supplies also does not have a visible inventory, you can pick up as many as you want because they will be scarce.
-There are inventory upgrades that can picked up:
-Knife sheath, allows you to store one knife on your person.
-Dynamite pouch, allows you to store one or two sticks of dynamite on your person.
+The player has a diegetic inventory, meaning it makes sense in the world. Everything the player will need is on the player model, which can be accessed by looking down at the player’s torso. Some items cannot be accessed unless in safe rooms, in which case those items are added to a non-visual inventory. The inventory will be able to be upgraded by finding upgrades in level.
+Knife Sheath: This allows you to store one bladed melee weapon on your person.
+Dynamite Pouch: This allows you to store 2-3 dynamite sticks on your person.
+Off-hand holster: This allows you to store a second pistol on your person. (Unsure if this will be included, not entirely sure how I want the bullet economy to work yet.)
 
 Combat
-Very much inspired by Condemned and Chivalry.
-Unarmed Combat:
-Kick
-Block
-Left Swing
-Right Swing
-Jab
-Overhead
-Melee Combat: Melee weapons can be picked up in the environment, but all melee weapons break quickly to encourage players to use their surroundings.
-Left Swing
-Right Swing
-Stab
-Overhead
-Throw
-Block
-Extra damage for certain melee types for certain attacks
-E.g. knives do more stab damage, axes do more slash damage, blunt do more overhead damage.
-Some melee weapons have combos
-E.g. bottles do more slash and overhead damage, this breaks the bottle and leaves the neck, which does more stab damage.
-Pistol: The pistol is like a special ability, you cannot reload except in the safe room (it is too wet outside), but it kills in one to two shots.
-Aim
-Cock hammer
-Fire
+	There are four “pillars” of combat in this project. Unarmed, melee, shooting, and throwing combat. This combat is inspired by Chivalry Medieval Warfare as well as Condemned: Criminal Origins. Most weapons have 5 different attacks: block, swing left, swing right, overhead, and stab. Each weapon is better at a different type of attack. Knives are better for stabbing, axes are better for slashing, and clubs are better at overheads. Melee weapons can be thrown, and there is a kick move that can be used while holding any weapon. Blocking with a melee weapon causes no damage to be done to the player, blocking while unarmed does a small amount of damage.
+	Melee weapons can break very easily, this encourages the player to scrounge for weapons on the map and during combat. Some melee weapons have combos, for example, a glass bottle can be slashed with or “overheaded” with to break it, and then stabbed with to do more damage.
+	The pistol is a very powerful weapon, but the ammunition for it is very scarce. The pistol can also not be reloaded unless you are in a safe room, due to the wet nature of the environment and the fact that it is a muzzleloader. It has three mechanics: aim, cock, shoot. The pistol must be cocked before it can shoot.
 
-Pillars
-Gunplay pillar
-Get first person controller working
-Make revolver model
-Make shooting how I want it to be
-Left mouse button: fire
-Right mouse button: cock hammer
-Middle mouse button: aim
-Loaded and unloaded chambers.
-Implement test targets that can die
-Make player model
-Make torso inventory, allow gun to be holstered and unholstered
-Make safe room reloading mini-game
-2D minigame where you have to put power in the chamber, put a bullet, and then seat the bullet with the lever.
-Add dynamite throwable
-Movement pillar
-Footsteps
-Floor types
-Mud, water, wood, stone, etc.
-Sprinting
-Crouching
-Stamina
-Inventory pillar
-Add food, drink, coffee, tobacco
-Store those
-Add bullets, powder, caps
-Store those
-Add inventory upgrades
-Sheath
-Dynamite pouch
-Add safe room test
-Add eating (not sure how I want to do this yet)
-Add sleeping and saving
-Add coffee drinking
-Add tobacco smoking
-Melee pillar
-Add unarmed combat
-Add melee combat
-Add melee weapons
-Add melee breaking
-Enemy AI pillar
-Make enemy models
-Add enemy types
-AI?????
-Level design pillar
-Make levels
-Implement story
-Polish
-Voice acting?
-Puzzles
+Safe Room
+	At the end of each level there is a safe room where the player must rest and prepare for the next day/level. Throughout the level the player can find food to pick up, this food can increase the player’s stats for the next day. The player must eat dinner, reload the pistol (if possible) and then sleep. The game saves during sleep. The next morning the player can choose to make coffee for a further stat boost before continuing to the next level.
+	Eating a full meal will increase health for the next day, this means eating a grain, protein, and other as well as a drink. Drinking coffee in the morning will increase the max stamina for the next day.
+--------------------------------------------------------------------------------------------------------------
+Items
+Food
+Grains: Tortilla, bread, rice, etc.
+Proteins: Beef, pork, chicken, venison, etc.
+Other: Beans, peppers, fruit, etc.
+Drink
+Whiskey, beer, moonshine, water, etc.
+Other consumables
+Tobacco, Coffee
+Ammo
+Bullets, power, percussion caps
+Melee Weapons
+Knives
+Axes, hatchets, tomahawks
+Hammers, bottles, planks, pipes
+Upgrades
+Sheath, holster, pouches
+--------------------------------------------------------------------------------------------------------------
+Replayability
+	Achievements that require replaying will be implemented, as well as a grade assigned at the end of the game similar to the Resident Evil series to encourage replaying. There will also be a total playtime timer to encourage speedrunning.
+
+Rough Story and Narrative
+  Retelling of the Noachian flood story from the book of Genesis. Man is evil, but he was influence to be evil by the devil who has taken a physical form in the Devil's Tower in Wyoming. God is going to wipe the earth clean with floods if you do not defeat the devil. 
+
+Game World
+  Gritty Wild West theme (a la Blood Meridian). Endless rain creates a muddy, flooded environment with gameplay consequences.
+
+Characters and Opponents
+  1. Small fast moving enemy, quick but deals low damage
+  2. Regual Enemy
+  3. Heavy Enemy, slow but deals high damage
+  4. Dynamiter, low physical damage but throws dynamite
+  Enemies can pick up melee weapons from their environment like in Condmened. Unsure yet if enemies should be able to have guns.
+
+Levels
+  1. 
+  2.
+  3...
+
+User Interface
+  Trying to keep a minimal interface.
+  1. Small crosshair (maybe no crosshair idk yet)
+  2. Stamina bar
+  3. Ammo display for when gun is drawn, will look like a revolver cylinder with loaded chambers indicated.
+  4. No health bar, health will be determined based on things like screen color, movement animations, and noises the player makes.
+
+Content Additions
+
+Feedback for the Player
+
+Data Collection for the Administrator
+
+Deployment
+
+Development
