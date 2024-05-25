@@ -4,6 +4,7 @@ Overview
 	Squall is a game intended purely for entertainment, it is a standalone program entirely contained within itself. There is no higher purpose, It is a first-person action shooter game intended for young adults.
 
 Gameplay
+
 	The overall objective of Squall is to reach the final destination and defeat the final boss. It is a linear experience where the player navigates from level to level, gradually making their way towards the final encounter and hence the climax of the story. Over time the player will encounter basic combat progression with encounters getting more and more difficult, along with items that improve the abilities of the player. Squall takes gameplay queues from the survival horror and immersive sim genres, providing a mix of combat and puzzles.
 --------------------------------------------------------------------------------------------------------------
 Mechanics
@@ -28,10 +29,12 @@ Combat
 	The pistol is a very powerful weapon, but the ammunition for it is very scarce. The pistol can also not be reloaded unless you are in a safe room, due to the wet nature of the environment and the fact that it is a muzzleloader. It has three mechanics: aim, cock, shoot. The pistol must be cocked before it can shoot.
 
 Safe Room
+
 	At the end of each level there is a safe room where the player must rest and prepare for the next day/level. Throughout the level the player can find food to pick up, this food can increase the player’s stats for the next day. The player must eat dinner, reload the pistol (if possible) and then sleep. The game saves during sleep. The next morning the player can choose to make coffee for a further stat boost before continuing to the next level.
 	Eating a full meal will increase health for the next day, this means eating a grain, protein, and other as well as a drink. Drinking coffee in the morning will increase the max stamina for the next day.
 --------------------------------------------------------------------------------------------------------------
 Items
+
 Food
 Grains: Tortilla, bread, rice, etc.
 Proteins: Beef, pork, chicken, venison, etc.
