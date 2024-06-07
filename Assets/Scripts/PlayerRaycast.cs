@@ -3,21 +3,15 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerRaycasting_old : MonoBehaviour
+public class PlayerRaycasting : MonoBehaviour
 {
+    // If false, interaction disabled.
+    [SerializeField] private bool useInteraction;
     // The max distance you can interact with an object.
     [SerializeField] float interactionDistance;
 
     // The target you are currently looking at.
     private IInteractable currentTarget;
-
-    // If this is true then interaction won't happen.
-    private bool interactionDisabled;
-
-    private void Awake()
-    {
-        interactionDisabled = false;
-    }
 
     /// <summary>
     /// Call HandleRaycast, if the interact key if pressed,
@@ -27,16 +21,13 @@ public class PlayerRaycasting_old : MonoBehaviour
     private void Update()
     {
         HandleRaycast();
-        if (!interactionDisabled)
-        {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                if (currentTarget != null)
-                {
-                    currentTarget.OnInteract();
-                }
+    }
 
-            }
+    public void Interact()
+    {
+        if(useInteraction && (currentTarget != null))
+        {
+            currentTarget.OnInteract();
         }
     }
 

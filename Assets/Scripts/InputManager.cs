@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour
 
     private PlayerMovement playerMovement;
     private PlayerCamera playerCamera;
+    private PlayerRaycasting playerRaycast;
 
     void Awake()
     {
@@ -17,10 +18,12 @@ public class InputManager : MonoBehaviour
         onFoot = playerInput.OnFoot;
         playerMovement = GetComponent<PlayerMovement>();
         playerCamera = GetComponentInChildren<PlayerCamera>();
+        playerRaycast = GetComponentInChildren<PlayerRaycasting>();
 
         onFoot.Jump.performed += ctx => playerMovement.Jump();
         onFoot.Crouch.performed += ctx => playerMovement.Crouch();
         onFoot.Sprint.performed += ctx => playerMovement.Sprint();
+        onFoot.Interact.performed += ctx => playerRaycast.Interact();
     }
 
     private void OnEnable()

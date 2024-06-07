@@ -143,13 +143,13 @@ MonoBehaviour:
   walkSpeed: 5
   sprintSpeed: 7
   crouchWalkSpeed: 2.5
-  currentSpeed: 0
   gravity: -9.8
   jumpHeight: 0.5
   standHeight: 2
   crouchHeight: 1.4
   timeToCrouch: 0.1
   crouchingRaycastDistance: 1.5
+  isCrouching: 0
 --- !u!1 &2521714356893273930
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8218664148899233676}
   - component: {fileID: 1698848037464314620}
+  - component: {fileID: 5489883880626592071}
   m_Layer: 0
   m_Name: CameraHolder
   m_TagString: Untagged
@@ -199,6 +200,20 @@ MonoBehaviour:
   smoothing: 0.25
   invertX: 0
   invertY: 0
+--- !u!114 &5489883880626592071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2521714356893273930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dad7641baf550949963d7033348d268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useInteraction: 1
+  interactionDistance: 5
 --- !u!1 &4164874826344424342
 GameObject:
   m_ObjectHideFlags: 0

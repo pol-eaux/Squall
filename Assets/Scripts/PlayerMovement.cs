@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float sprintSpeed = 7f;
     [SerializeField] private float crouchWalkSpeed = 2.5f;
     private bool isSprinting;
-    [SerializeField]private float currentSpeed;
+    private float currentSpeed;
 
     [Header("Jump Variables")]
     [SerializeField] private float gravity = -9.8f;
@@ -22,19 +22,12 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
 
     [Header("Crouch Variables")]
-    //[SerializeField] private float crouchingRaycastDistance;
-    //private float crouchTimer;
-    //private bool isCrouching;
-    //private bool lerpCrouch;
-
     [SerializeField] private float standHeight = 2.0f;
     [SerializeField] private float crouchHeight = 1.4f;
     [SerializeField] private float timeToCrouch = 0.1f;
     [SerializeField] private float crouchingRaycastDistance;
-    private bool isCrouching;
+    [SerializeField] private bool isCrouching;
     private bool duringCrouchAnimation;
-
-    // Private non serialized variables.
     Vector3 crouchingCenter = new Vector3(0, 0.5f, 0);
     Vector3 standingCenter = new Vector3(0, 0, 0);
 
@@ -42,7 +35,6 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController characterController;
     private Vector3 velocity;
 
-    // Start is called before the first frame update
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -50,7 +42,6 @@ public class PlayerMovement : MonoBehaviour
         isCrouching = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         isGrounded = characterController.isGrounded;
@@ -134,6 +125,7 @@ public class PlayerMovement : MonoBehaviour
         {
             yield break;
         }
+
         duringCrouchAnimation = true;
 
         float timeElapsed = 0;
@@ -150,10 +142,10 @@ public class PlayerMovement : MonoBehaviour
             yield return null;
         }
 
+        isCrouching = !isCrouching;
+
         characterController.height = targetHeight;
         characterController.center = targetCenter;
-
-        isCrouching = !isCrouching;
 
         duringCrouchAnimation = false;
     }
