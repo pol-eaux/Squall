@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement_old : MonoBehaviour
 {
     [Header("Feature Toggles")]
     [SerializeField] private bool canJump;
@@ -137,7 +137,7 @@ public class PlayerMovement : MonoBehaviour
         duringCrouchAnimation = false;
     }
 
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
         return Physics.Raycast(transform.position, Vector3.down, groundingRaycastDistance);
     }

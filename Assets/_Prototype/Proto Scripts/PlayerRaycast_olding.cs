@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerRaycasting : MonoBehaviour
+public class PlayerRaycasting_old : MonoBehaviour
 {
     // The max distance you can interact with an object.
     [SerializeField] float interactionDistance;
@@ -27,7 +27,6 @@ public class PlayerRaycasting : MonoBehaviour
     private void Update()
     {
         HandleRaycast();
-        //Debug.Log("Raycast Disabled: " + _disabled);
         if (!interactionDisabled)
         {
             if (Input.GetKeyDown(KeyCode.F))

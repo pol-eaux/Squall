@@ -21,19 +21,12 @@ public class PlayerCamera : MonoBehaviour
         Cursor.visible = false;
     }
 
-    private void Update()
+    public void RotateCamera(Vector2 input)
     {
-        RotateCamera();
-    }
+        input = Vector2.Scale(input, new Vector2(lookSensitivity * smoothing, lookSensitivity * smoothing));
 
-    private void RotateCamera()
-    {
-        Vector2 inputValues = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
-
-        inputValues = Vector2.Scale(inputValues, new Vector2(lookSensitivity * smoothing, lookSensitivity * smoothing));
-
-        smoothedVelocity.x = Mathf.Lerp(smoothedVelocity.x, inputValues.x, 1f / smoothing);
-        smoothedVelocity.y = Mathf.Lerp(smoothedVelocity.y, inputValues.y, 1f / smoothing);
+        smoothedVelocity.x = Mathf.Lerp(smoothedVelocity.x, input.x, 1f / smoothing);
+        smoothedVelocity.y = Mathf.Lerp(smoothedVelocity.y, input.y, 1f / smoothing);
 
         currentLookingPos += smoothedVelocity;
 
