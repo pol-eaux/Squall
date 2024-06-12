@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 8218664148899233676}
   - component: {fileID: 1698848037464314620}
   - component: {fileID: 5489883880626592071}
+  - component: {fileID: 409537271673026810}
   m_Layer: 0
   m_Name: CameraHolder
   m_TagString: Untagged
@@ -214,6 +215,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useInteraction: 1
   interactionDistance: 5
+--- !u!114 &409537271673026810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2521714356893273930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9c7cb38f78d7f4d9f67db1982fd7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hudCanvas: {fileID: 0}
+  defaultCrosshair: {fileID: 0}
+  interactCrosshair: {fileID: 0}
 --- !u!1 &4164874826344424342
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class TestUse : MonoBehaviour, IInteractable
 {
     public void OnEndLook()
     {
-        Debug.Log("Stopped looking at: " + gameObject.name);
+        EventBus.Instance.EndInteractableLook();
     }
 
     public void OnInteract()
@@ -16,6 +16,6 @@ public class TestUse : MonoBehaviour, IInteractable
 
     public void OnStartLook()
     {
-        Debug.Log("Looking at: " + gameObject.name);
+        EventBus.Instance.StartInteractableLook();
     }
 }
