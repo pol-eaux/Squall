@@ -23,6 +23,9 @@ public class PlayerRaycasting : MonoBehaviour
         HandleRaycast();
     }
 
+    /// <summary>
+    /// Called upon detection of interact input.
+    /// </summary>
     public void Interact()
     {
         if(useInteraction && (currentTarget != null))

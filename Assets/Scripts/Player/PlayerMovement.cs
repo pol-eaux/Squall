@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    #region ------ Variables ------
     [Header("Feature Toggles")]
     [SerializeField] private bool useJump = true;
     [SerializeField] private bool useCrouch = true;
@@ -26,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float crouchHeight = 1.4f;
     [SerializeField] private float timeToCrouch = 0.1f;
     [SerializeField] private float crouchingRaycastDistance;
-    [SerializeField] private bool isCrouching;
+    private bool isCrouching;
     private bool duringCrouchAnimation;
     Vector3 crouchingCenter = new Vector3(0, 0.5f, 0);
     Vector3 standingCenter = new Vector3(0, 0, 0);
@@ -34,7 +35,10 @@ public class PlayerMovement : MonoBehaviour
     // Private references.
     private CharacterController characterController;
     private Vector3 velocity;
+    private Vector3 moveDirection;
+    #endregion ------ Variables ------
 
+    #region ------ Unity Methods ------
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -46,11 +50,15 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = characterController.isGrounded;
     }
+    #endregion
 
-    // Receives inputs from InputManager and applies them to the character controller.
+    /// <summary>
+    /// Receives inputs from InputManager and applies them to the character controller.
+    /// </summary>
+    /// <param name="input"></param>
     public void Move(Vector2 input)
     {
-        Vector3 moveDirection = Vector3.zero;
+        moveDirection = Vector3.zero;
         moveDirection.x = input.x;
         moveDirection.z = input.y;
 
@@ -66,15 +74,22 @@ public class PlayerMovement : MonoBehaviour
             currentSpeed = walkSpeed;
         }
 
+        // Moves the character based on moveDirection.
         characterController.Move(transform.TransformDirection(moveDirection) * currentSpeed * Time.deltaTime);
+
+        // Apply gravity.
         velocity.y += gravity * Time.deltaTime;
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
-        characterController.Move(velocity * Time.deltaTime);
+        characterController.Move(velocity * Time.deltaTime); // because there are two move calls the character controller velocity is always zero.
     }
 
+    #region ------ Jump ------
+    /// <summary>
+    /// Called upon pressing the jump input, checks if conditions are right before changing the velocity vector.
+    /// </summary>
     public void Jump()
     {
         // If the jump feature is enabled, and the player is grounded...
@@ -87,18 +102,12 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+#endregion
 
-    public void Crouch()
-    {
-        if (useCrouch)
-        {
-            if (!duringCrouchAnimation && characterController.isGrounded)
-            {
-                StartCoroutine(CrouchStand());
-            }
-        }
-    }
-
+    #region ------ Sprint ------
+    /// <summary>
+    /// Called upon holding the sprint input.
+    /// </summary>
     public void Sprint()
     {
         isSprinting = !isSprinting;
@@ -117,7 +126,28 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+    #endregion
 
+    #region ------ Crouch ------
+    /// <summary>
+    /// Called upon pressing the crouch input.
+    /// </summary>
+    public void Crouch()
+    {
+        if (useCrouch)
+        {
+            if (!duringCrouchAnimation && characterController.isGrounded)
+            {
+                StartCoroutine(CrouchStand());
+            }
+        }
+    }
+
+    /// <summary>
+    /// Lerps the character controller to the correct height and center depending on if the player is standing or crouching.
+    /// Called after a crouch input is detected.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator CrouchStand()
     {
         // If there is an object above, don't stand up.
@@ -134,6 +164,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 targetCenter = isCrouching ? standingCenter : crouchingCenter;
         Vector3 currentCenter = characterController.center;
 
+        // Lerp the character controller height and center to the correct place.
         while (timeElapsed < timeToCrouch)
         {
             characterController.height = Mathf.Lerp(currentHeight, targetHeight, timeElapsed / timeToCrouch);
@@ -144,10 +175,23 @@ public class PlayerMovement : MonoBehaviour
 
         isCrouching = !isCrouching;
 
+        // Afterwards set the height and center to the exact correct values.
         characterController.height = targetHeight;
         characterController.center = targetCenter;
 
         duringCrouchAnimation = false;
     }
+    #endregion
 
+    #region ------ Getters ------
+    public Vector3 GetMoveDirection()
+    {
+        return moveDirection;
+    }
+
+    public bool GetIsCrouching()
+    {
+        return isCrouching;
+    }
+    #endregion
 }

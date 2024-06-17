@@ -4,23 +4,31 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
+    [Header("Look Variables")]
     [SerializeField] private float lookSensitivity;
     [SerializeField] private float smoothing;
 
+    [Header("Inversion Toggles")]
     [SerializeField] private bool invertX;
     [SerializeField] private bool invertY;
 
+    // Private variables
     private GameObject player;
     private Vector2 smoothedVelocity;
     private Vector2 currentLookingPos;
 
     private void Start()
     {
+        // By default lock and hide the cursor.
         player = transform.parent.gameObject;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
+    /// <summary>
+    /// Rotates the camera based on the input parameter.
+    /// </summary>
+    /// <param name="input"></param>
     public void RotateCamera(Vector2 input)
     {
         input = Vector2.Scale(input, new Vector2(lookSensitivity * smoothing, lookSensitivity * smoothing));

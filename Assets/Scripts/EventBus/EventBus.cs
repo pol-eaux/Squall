@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EventBus : MonoBehaviour
 {
+    // Singleton setup.
     public static EventBus Instance { get; private set; }
 
     public event Action OnStartLook;
